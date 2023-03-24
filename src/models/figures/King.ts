@@ -115,7 +115,6 @@ export class King extends Figure {
         target.figure?.name === FigureNames.KNIGHT &&
         target.figure.color != this.color
       ) {
-        console.log("Конь ебать");
         return true;
       }
     }

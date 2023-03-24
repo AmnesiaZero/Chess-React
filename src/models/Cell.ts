@@ -1,7 +1,6 @@
 import { Colors } from "./Colors";
 import { Figure } from "./figures/Figure";
 import { Board } from "./Board";
-import { createPublicKey } from "crypto";
 
 export class Cell {
     readonly x: number;
@@ -37,7 +36,6 @@ export class Cell {
         if (this.x != target.x)  {
             return false;
         }
-
         const min = Math.min(this.y, target.y)
         const max = Math.max(this.y, target.y)
 
@@ -48,7 +46,6 @@ export class Cell {
         }
         return true;
     }
-
     public isEmptyHorizontal(target: Cell): boolean {
         if (this.y != target.y)  {
             return false;
@@ -64,8 +61,7 @@ export class Cell {
         }
         return true;
     }
-
-    public isEmptyDiagonal(target: Cell): boolean {
+     public isEmptyDiagonal(target: Cell): boolean {
         const absX = Math.abs(target.x - this.x);
         const absY = Math.abs(target.y - this.y);
         if (absY !== absX) {
